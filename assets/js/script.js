@@ -4,6 +4,7 @@ const exitBtn = document.querySelector('.exit-btn');
 const main = document.querySelector('.main');
 const continueBtn = document.querySelector('.continue-btn');
 const quizSeciton = document.querySelector('.quiz-section');
+const quizBox = document.querySelector('.quiz-box');
 
 startBtn.onclick = () =>{
     popupInfo.classList.add('active');
@@ -19,4 +20,7 @@ continueBtn.onclick = () =>{
     quizSeciton.classList.add('active');
     popupInfo.classList.remove('active');
     main.classList.remove('active');
+    quizBox.classList.add('active');
 }
+
+let questionsCount = 0;

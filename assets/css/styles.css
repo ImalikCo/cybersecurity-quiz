@@ -75,7 +75,7 @@ body{
     width: 100%;
     background: rgb(5, 1, 26);
     position: relative;
-    left: 0;
+    left: -50%;
     transition: .8s ease-in-out;
     transition-delay: .25s;
     z-index: 100;
@@ -97,6 +97,17 @@ body{
     display: flex;
     flex-direction: column;
     padding: 20px 30px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(.9);
+}
+
+.quiz-section .quiz-box.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+    transition: 1s ease;
+    transition-delay: 1s;
 }
 
 .quiz-box h1 {
@@ -119,6 +130,8 @@ body{
     padding-top: 20px;
     margin-top: 20px;
 }
+
+
 
 .quiz-footer .question-total{
     font-size: 16px;
