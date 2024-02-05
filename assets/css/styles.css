@@ -150,7 +150,7 @@ body{
     font-weight: 600;
     cursor: pointer;
     transition: .5s;
-    pointer-events: none;
+    /*pointer-events: none;*/
 }
 
 .quiz-footer .next-btn:hover{
@@ -193,6 +193,22 @@ body{
 .option-list .option:hover{
     background-color: rgba(255, 255, 255, .1);
     border-color: rgba(255, 255, 255, .1);
+}
+
+.option-list .option.correct{
+    background:rgb(5, 1, 26);
+    color: green;
+    border-color: green;
+}
+
+.option-list .option.incorrect{
+    background:rgb(5, 1, 26);
+    color: red;
+    border-color: red;
+}
+
+.option-list .option.disabled{
+    pointer-events: none;
 }
 
 .home{
