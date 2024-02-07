@@ -150,11 +150,18 @@ body{
     font-weight: 600;
     cursor: pointer;
     transition: .5s;
-    /*pointer-events: none;*/
+    pointer-events: none;
 }
 
-.quiz-footer .next-btn:hover{
-    background-color: red;
+.quiz-footer .next-btn.active{
+    pointer-events: auto;
+    background: red;
+    border-color: red;
+    color: white;
+}
+
+.quiz-footer .next-btn.active:hover{
+    background-color: rgb(146, 9, 9);
     border-color: rgb(109, 2, 2);
 }
 
@@ -337,4 +344,42 @@ body{
 
 .popup-info .btn-group .info-btn:nth-child(2):hover{
     background:rgb(94, 6, 6);
+}
+
+.quiz-section .result-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background: transparent;
+    border: 2px solid red;
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result-box h2{
+    font-size: 52px;
+}
+
+.result-box .percentage-container {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 40px;
+}
+
+.percentage-container .circular-progress{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: conic-gradient(red 3.6deg, rgba(255,255,255, .1) 0deg);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
