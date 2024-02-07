@@ -54,7 +54,7 @@ body{
 
 .main {
     min-height: 100vh;
-    background: url(../img/background.jpg) no-repeat;
+    background: url(../img/background.gif) no-repeat;
     background-size: cover;
     background-position: center;
     pointer-events: auto;
@@ -100,6 +100,8 @@ body{
     opacity: 0;
     pointer-events: none;
     transform: scale(.9);
+    transition: .3s ease;
+    transition-delay: 0s;
 }
 
 .quiz-section .quiz-box.active{
@@ -350,7 +352,7 @@ body{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(.9);
     width: 500px;
     background: transparent;
     border: 2px solid red;
@@ -359,6 +361,15 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+}
+
+.quiz-section .result-box.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
 }
 
 .result-box h2{
@@ -382,4 +393,54 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.percentage-container .circular-progress::before{
+    content: '';
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    background: rgb(5, 1, 26);
+    border-radius: 50%;
+}
+
+.circular-progress .progress-value{
+    position: relative;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.score-text{
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.result-box .buttons{
+    display: flex;
+}
+
+.buttons button{
+    width: 130px;
+    height: 47px;
+    background-color: red;
+    border: 2px solid red;
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.buttons button:nth-child(2){
+    background:transparent;
+    color: red;
+}
+
+.buttons button:nth-child(2):hover{
+    background:red;
+    color: rgb(255, 255, 255);
 }

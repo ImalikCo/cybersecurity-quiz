@@ -3,8 +3,12 @@ const popupInfo = document.querySelector('.popup-info');
 const exitBtn = document.querySelector('.exit-btn');
 const main = document.querySelector('.main');
 const continueBtn = document.querySelector('.continue-btn');
-const quizSeciton = document.querySelector('.quiz-section');
+const quizSection = document.querySelector('.quiz-section');
 const quizBox = document.querySelector('.quiz-box');
+const resultBox = document.querySelector('.result-box');
+const tryAgain = document.querySelector('.try-btn');
+const homeBtn = document.querySelector('.home-btn');
+
 
 startBtn.onclick = () =>{
     popupInfo.classList.add('active');
@@ -17,7 +21,7 @@ exitBtn.onclick = () =>{
 }
 
 continueBtn.onclick = () =>{
-    quizSeciton.classList.add('active');
+    quizSection.classList.add('active');
     popupInfo.classList.remove('active');
     main.classList.remove('active');
     quizBox.classList.add('active');
@@ -25,6 +29,30 @@ continueBtn.onclick = () =>{
     questionCounter(1);
     headerScore();
 
+}
+
+tryAgain.onclick = () =>{
+    quizBox.classList.add('active');
+    nextBtn.classList.remove('active');
+    resultBox.classList.remove('active');
+    questionsCount = 0;
+    questionsNumb = 1;
+    userScore = 0;
+    showQuestions(questionsCount);
+    questionCounter(questionsNumb);
+    headerScore();
+}
+
+homeBtn.onclick = () =>{
+    quizSection.classList.remove('active');
+    nextBtn.classList.remove('active');
+    resultBox.classList.remove('active');
+    questionsCount = 0;
+    questionsNumb = 1;
+    userScore = 0;
+    showQuestions(questionsCount);
+    questionCounter(questionsNumb);
+    headerScore();
 }
 
 let questionsCount = 0;
@@ -42,7 +70,8 @@ nextBtn.onclick = () => {
         nextBtn.classList.remove('active');
     }
     else {
-        console.log('Question completed');
+        //console.log('Question completed');
+        showResultBox();
     }
 }
 
@@ -100,4 +129,29 @@ function questionCounter(index) {
 function headerScore() {
     const headerScoreText = document.querySelector('.header-score');
     headerScoreText.textContent = `Score: ${userScore} / ${questions.length}`;
+}
+
+function showResultBox() {
+    quizBox.classList.remove('active');
+    resultBox.classList.add('active');
+
+    const scoreText = document.querySelector('.score-text');
+    scoreText.textContent = `Your Score is ${userScore} out of ${questions.length}`;
+
+    const circularProgress = document.querySelector('.circular-progress');
+    const progressValue = document.querySelector('.progress-value');
+    let progressStartValue = -1;
+    let progressEndValue = (userScore / questions.length) * 100;
+    let speed = 20;
+    
+    let progress = setInterval(() =>{
+        progressStartValue++;
+        //console.log(progressStartValue);
+        progressValue.textContent = `${progressStartValue}%`;
+        circularProgress.style.background = `conic-gradient(red ${progressStartValue * 3.6}deg, rgba(255,255,255, .1) 0deg)`;
+        if (progressStartValue == progressEndValue) {
+            clearInterval(progress);
+        }
+    }, speed);
+
 }
