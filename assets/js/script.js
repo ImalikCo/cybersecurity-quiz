@@ -163,3 +163,5 @@ document.getElementById('main-title').innerHTML = 'CS Quiz';
 document.getElementById('info-1').innerHTML = 'Welcome to the Cyber security Quiz ';
 document.getElementById('info-2').innerHTML = 'made by Imalik Co';
 document.getElementById('info-3').innerHTML = 'Good luck and have fun!';
+document.getElementById('exit-btn').innerHTML = 'Exit Quiz';
+document.getElementById('continue-btn').innerHTML = 'Continue';
