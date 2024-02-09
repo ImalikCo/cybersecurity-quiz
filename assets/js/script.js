@@ -155,3 +155,11 @@ function showResultBox() {
     }, speed);
 
 }
+
+document.getElementById('headline').innerHTML = 'Cyber Security Quiz';
+document.getElementById('box-headline').innerHTML = 'Cybersecurity Quiz';
+document.getElementById('description').innerHTML = 'In this interactive quiz, players get asked questions as a skilled ethical hacker tasked with defending a virtual network from relentless cyber threats.';
+document.getElementById('main-title').innerHTML = 'CS Quiz';
+document.getElementById('info-1').innerHTML = 'Welcome to the Cyber security Quiz ';
+document.getElementById('info-2').innerHTML = 'made by Imalik Co';
+document.getElementById('info-3').innerHTML = 'Good luck and have fun!';
