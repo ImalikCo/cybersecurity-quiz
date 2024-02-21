@@ -46,12 +46,12 @@ let questions = [
     {
         numb: 5,
         question: "What is a 'Zero-Day Exploit' in the context of cybersecurity?",
-        answer: "C) A vulnerability that is exploited before the software vendor releases a patch",
+        answer: "D) A vulnerability that is exploited before the software vendor releases a patch",
         options: [
             "A) An attack that occurs at midnight (00:00 hours)",
             "B) An exploit that takes zero days to execute",
-            "C) A vulnerability that is exploited before the software vendor releases a patch",
-            "D) A security measure that eliminates all vulnerabilities"
+            "C) A security measure that eliminates all vulnerabilities ",
+            "D) A vulnerability that is exploited before the software vendor releases a patch"
         ]
     },
 ]
